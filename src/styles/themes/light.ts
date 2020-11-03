@@ -27,7 +27,7 @@ const theme: DefaultTheme = {
 	title: 'light',
 	background: {
 		primary: '#ffffff',
-		secondary: '#F4F5FA',
+		secondary: '#f8f8f8',
 	},
 	text: {
 		primary: '#1A1A1A',
@@ -38,7 +38,7 @@ const theme: DefaultTheme = {
 		secondary: '#236690',
 		alternative: '#E8D561',
 		danger: '#DC3545',
-		success: '#53a653',
+		success: '#0BA14A',
 	},
 	font,
 };
