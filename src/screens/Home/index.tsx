@@ -2,31 +2,28 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import Header from '~/components/Header';
+import Greetings from '~/components/Greetigns';
+import Section, {
+	SectionHeader,
+	SectionTitle,
+	SectionContent,
+	SectionValue,
+	SectionItems,
+	SectionItem,
+	SectionItemText,
+	SectionItemStatus,
+} from '~/components/Section';
+import { Row, ColRight, ColLeft } from '~/components/Row';
 
 import {
 	Wrapper,
 	Container,
-	Greetings,
-	Logo,
-	Title,
-	Row,
-	ColRight,
-	ColLeft,
 	Thermometer,
 	Humidity,
 	Curtains,
 	Ventilation,
 	Camera,
-	Section,
-	SectionHeader,
-	SectionTitle,
-	SectionContent,
-	SectionValue,
 	CameraImage,
-	SectionItems,
-	SectionItem,
-	SectionItemText,
-	SectionItemStatus,
 } from './styles';
 
 const successColors = ['#119d59', '#4fcf8a'];
@@ -38,14 +35,11 @@ const Home: React.FC = () => {
 			<Header />
 
 			<Container>
-				<Greetings>
-					<Logo />
-					<Title>Seja{'\n'}Bem-vindo!</Title>
-				</Greetings>
+				<Greetings />
 
 				<Row>
 					<ColLeft>
-						<Section style={styles.shadow}>
+						<Section>
 							<SectionHeader>
 								<SectionTitle>Temperatura</SectionTitle>
 							</SectionHeader>
@@ -57,7 +51,7 @@ const Home: React.FC = () => {
 					</ColLeft>
 
 					<ColRight>
-						<Section style={styles.shadow}>
+						<Section>
 							<SectionHeader>
 								<SectionTitle>Umidade</SectionTitle>
 							</SectionHeader>
@@ -69,7 +63,7 @@ const Home: React.FC = () => {
 					</ColRight>
 				</Row>
 
-				<Section style={styles.shadow}>
+				<Section>
 					<SectionHeader style={styles.cameraHeader}>
 						<SectionTitle>Câmera</SectionTitle>
 						<Camera />
@@ -81,7 +75,7 @@ const Home: React.FC = () => {
 
 				<Row>
 					<ColLeft>
-						<Section style={styles.shadow}>
+						<Section>
 							<SectionHeader>
 								<SectionTitle>Ventilação</SectionTitle>
 								<Ventilation />
@@ -110,7 +104,7 @@ const Home: React.FC = () => {
 					</ColLeft>
 
 					<ColRight>
-						<Section style={styles.shadow}>
+						<Section>
 							<SectionHeader>
 								<SectionTitle>Cortinas</SectionTitle>
 								<Curtains />
@@ -145,17 +139,6 @@ const Home: React.FC = () => {
 
 const styles = StyleSheet.create({
 	cameraHeader: { justifyContent: 'space-between' },
-	shadow: {
-		shadowColor: '#000',
-		shadowOffset: {
-			width: 0,
-			height: 1,
-		},
-		shadowOpacity: 0.22,
-		shadowRadius: 2.22,
-
-		elevation: 3,
-	},
 });
 
 export default Home;
