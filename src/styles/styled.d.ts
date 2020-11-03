@@ -1,7 +1,6 @@
 import 'styled-components';
 
 export interface FontFamily {
-	light: string;
 	regular: string;
 	medium: string;
 	semiBold: string;
@@ -24,11 +23,13 @@ declare module 'styled-components' {
 		colors: {
 			primary: string;
 			secondary: string;
+			alternative: string;
 			danger: string;
 			success: string;
 		};
-		// font: {
-		// 	primary: FontFamily;
-		// };
+		font: {
+			primary: FontFamily;
+			secondary: FontFamily;
+		};
 	}
 }

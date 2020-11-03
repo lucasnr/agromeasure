@@ -1,39 +1,46 @@
 import { DefaultTheme } from 'styled-components';
-// import { FontFamily } from '../styled';
+import { FontFamily } from '../styled';
 
-// const font: {
-// 	primary: FontFamily;
-// 	secondary: string;
-// } = {
-// 	primary: {
-// 		light: 'PoppinsLight',
-// 		regular: 'PoppinsRegular',
-// 		medium: 'PoppinsMedium',
-// 		semiBold: 'PoppinsSemiBold',
-// 		bold: 'PoppinsBold',
-// 		extraBold: 'PoppinsExtraBold',
-// 		black: 'PoppinsBlack',
-// 	},
-// 	secondary: 'PatrickHandRegular',
-// };
+const font: {
+	primary: FontFamily;
+	secondary: FontFamily;
+} = {
+	primary: {
+		regular: 'Montserrat Regular',
+		medium: 'Montserrat Medium',
+		semiBold: 'Montserrat SemiBold',
+		bold: 'Montserrat Bold',
+		extraBold: 'Montserrat ExtraBold',
+		black: 'Montserrat Black',
+	},
+	secondary: {
+		regular: 'IBM Plex Sans Regular',
+		medium: 'IBM Plex Sans Medium',
+		semiBold: 'IBM Plex Sans SemiBold',
+		bold: 'IBM Plex Sans Bold',
+		extraBold: 'IBM Plex Sans Bold',
+		black: 'IBM Plex Sans Bold',
+	},
+};
 
 const theme: DefaultTheme = {
 	title: 'light',
 	background: {
 		primary: '#ffffff',
-		secondary: '#FBFBFB',
+		secondary: '#F4F5FA',
 	},
 	text: {
-		primary: '#363732',
-		secondary: '#787878',
+		primary: '#1A1A1A',
+		secondary: '#ADADAD',
 	},
 	colors: {
-		primary: '#53D8FB',
-		secondary: '#3F3D56',
+		primary: '#0BA14A',
+		secondary: '#236690',
+		alternative: '#E8D561',
 		danger: '#DC3545',
 		success: '#53a653',
 	},
-	// font,
+	font,
 };
 
 export default theme;
