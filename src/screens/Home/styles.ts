@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Dimensions, StatusBar } from 'react-native';
 
 import cameraImage from '~/assets/img/Camera.png';
 
@@ -13,14 +14,15 @@ export const Wrapper = styled.View`
 	flex-grow: 1;
 `;
 
+const { height } = Dimensions.get('window');
+
 export const Container = styled.ScrollView.attrs({
 	contentContainerStyle: {
 		paddingHorizontal: 24,
-		paddingBottom: 24,
-		paddingTop: 14,
+		paddingVertical: 14,
 	},
 })`
-	flex-grow: 1;
+	height: ${height - 48 - (StatusBar.currentHeight || 0)}px;
 `;
 
 export const Thermometer = styled.Image.attrs({

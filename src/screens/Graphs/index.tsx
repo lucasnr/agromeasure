@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import Header from '~/components/Header';
 import Greetings from '~/components/Greetigns';
@@ -10,7 +10,8 @@ import Section, {
 } from '~/components/Section';
 
 import HumidityChart from './HumidityChart';
-import { Wrapper, Container } from './styles';
+import TemperatureChart from './TemperatureChart';
+import { Wrapper, Container, ContentContainer, Labels, Label } from './styles';
 
 const Home: React.FC = () => {
 	return (
@@ -25,7 +26,19 @@ const Home: React.FC = () => {
 						<SectionTitle style={styles.title}>Umidade</SectionTitle>
 					</SectionHeader>
 					<SectionContent>
-						<HumidityChart />
+						<ContentContainer>
+							<HumidityChart />
+
+							<Labels>
+								<Label>22º</Label>
+								<Label>23º</Label>
+								<Label>24º</Label>
+								<Label>25º</Label>
+								<Label>26º</Label>
+								<Label>27º</Label>
+								<Label>28º</Label>
+							</Labels>
+						</ContentContainer>
 					</SectionContent>
 				</Section>
 
@@ -33,7 +46,31 @@ const Home: React.FC = () => {
 					<SectionHeader>
 						<SectionTitle style={styles.title}>Temperatura</SectionTitle>
 					</SectionHeader>
-					<SectionContent>{/* Graph */}</SectionContent>
+					<SectionContent>
+						<ContentContainer>
+							<Labels>
+								<Label>22º</Label>
+								<Label>23º</Label>
+								<Label>24º</Label>
+								<Label>25º</Label>
+								<Label>26º</Label>
+								<Label>27º</Label>
+								<Label>28º</Label>
+							</Labels>
+
+							<TemperatureChart />
+
+							<Labels>
+								<Label>Seg</Label>
+								<Label>Ter</Label>
+								<Label>Quar</Label>
+								<Label>Quin</Label>
+								<Label>Sex</Label>
+								<Label>Sab</Label>
+								<Label>Dom</Label>
+							</Labels>
+						</ContentContainer>
+					</SectionContent>
 				</Section>
 			</Container>
 		</Wrapper>

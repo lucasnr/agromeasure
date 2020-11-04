@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { BarChart } from 'react-native-svg-charts';
 
 const Chart: React.FC = () => {
-	const data1 = [20, 15, 15, 8, 14, 24, 20].map((value) => ({ value }));
-	const data2 = [10, 7.5, 7.5, 4, 12, 20, 15].map((value) => ({ value }));
+	const data1 = [20, 15, 15, 8, 14, 24, 20];
+	const data2 = [10, 7.5, 7.5, 4, 12, 20, 15];
 
 	// const labels = ['22º', '22º', '22º', '22º', '22º', '22º', '22º'];
 
@@ -28,7 +28,7 @@ const Chart: React.FC = () => {
 			<BarChart
 				style={styles.chart}
 				data={barData}
-				yAccessor={({ item }) => item.value}
+				yAccessor={({ item }) => item}
 				spacingInner={0.5}
 				contentInset={{ top: 0, bottom: 30 }}
 			/>
