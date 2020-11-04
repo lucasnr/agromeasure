@@ -34,11 +34,11 @@ const theme: DefaultTheme = {
 		secondary: '#ADADAD',
 	},
 	colors: {
-		primary: '#0BA14A',
+		primary: '#24954B',
 		secondary: '#236690',
 		alternative: '#E8D561',
 		danger: '#DC3545',
-		success: '#0BA14A',
+		success: '#24954B',
 	},
 	font,
 };

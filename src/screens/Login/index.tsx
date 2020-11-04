@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { StatusBar, TouchableOpacity } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { ThemeContext } from 'styled-components/native';
 
 import Input from '~/components/Input';
@@ -19,14 +20,22 @@ import {
 const Login: React.FC = () => {
 	const { colors } = useContext(ThemeContext);
 
+	const navigation = useNavigation();
+	const onPress = useCallback(() => {
+		navigation.reset({
+			index: 0,
+			routes: [{ name: 'App' }],
+		});
+	}, [navigation]);
+
+	useFocusEffect(
+		useCallback(() => {
+			StatusBar.setBarStyle('light-content');
+		}, [])
+	);
+
 	return (
 		<Wrapper keyboardShouldPersistTaps="always">
-			<StatusBar
-				translucent={true}
-				backgroundColor="transparent"
-				barStyle="light-content"
-			/>
-
 			<Header />
 
 			<Container>
@@ -46,7 +55,7 @@ const Login: React.FC = () => {
 					<ForgotPassword>Esqueci minha senha</ForgotPassword>
 				</TouchableOpacity>
 
-				<Button activeOpacity={0.7}>
+				<Button onPress={onPress} activeOpacity={0.7}>
 					<ButtonText>Login</ButtonText>
 				</Button>
 

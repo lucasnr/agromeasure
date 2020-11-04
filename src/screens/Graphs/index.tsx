@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
 import Header from '~/components/Header';
 import Greetings from '~/components/Greetigns';
@@ -8,8 +9,8 @@ import Section, {
 	SectionTitle,
 } from '~/components/Section';
 
+import HumidityChart from './HumidityChart';
 import { Wrapper, Container } from './styles';
-import { StyleSheet } from 'react-native';
 
 const Home: React.FC = () => {
 	return (
@@ -23,7 +24,9 @@ const Home: React.FC = () => {
 					<SectionHeader>
 						<SectionTitle style={styles.title}>Umidade</SectionTitle>
 					</SectionHeader>
-					<SectionContent>{/* Graph */}</SectionContent>
+					<SectionContent>
+						<HumidityChart />
+					</SectionContent>
 				</Section>
 
 				<Section>

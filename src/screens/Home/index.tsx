@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useCallback } from 'react';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import Header from '~/components/Header';
 import Greetings from '~/components/Greetigns';
@@ -25,11 +25,17 @@ import {
 	Camera,
 	CameraImage,
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const successColors = ['#119d59', '#4fcf8a'];
 const dangerColors = ['#ff3149', '#822930'];
 
 const Home: React.FC = () => {
+	const navigation = useNavigation();
+	const onPress = useCallback(() => {
+		navigation.navigate('Graphs');
+	}, [navigation]);
+
 	return (
 		<Wrapper>
 			<Header />
@@ -39,27 +45,31 @@ const Home: React.FC = () => {
 
 				<Row>
 					<ColLeft>
-						<Section>
-							<SectionHeader>
-								<SectionTitle>Temperatura</SectionTitle>
-							</SectionHeader>
-							<SectionContent>
-								<SectionValue>24º</SectionValue>
-								<Thermometer />
-							</SectionContent>
-						</Section>
+						<TouchableOpacity onPress={onPress} activeOpacity={1}>
+							<Section>
+								<SectionHeader>
+									<SectionTitle>Temperatura</SectionTitle>
+								</SectionHeader>
+								<SectionContent>
+									<SectionValue>24º</SectionValue>
+									<Thermometer />
+								</SectionContent>
+							</Section>
+						</TouchableOpacity>
 					</ColLeft>
 
 					<ColRight>
-						<Section>
-							<SectionHeader>
-								<SectionTitle>Umidade</SectionTitle>
-							</SectionHeader>
-							<SectionContent>
-								<SectionValue>55%</SectionValue>
-								<Humidity />
-							</SectionContent>
-						</Section>
+						<TouchableOpacity onPress={onPress} activeOpacity={1}>
+							<Section>
+								<SectionHeader>
+									<SectionTitle>Umidade</SectionTitle>
+								</SectionHeader>
+								<SectionContent>
+									<SectionValue>55%</SectionValue>
+									<Humidity />
+								</SectionContent>
+							</Section>
+						</TouchableOpacity>
 					</ColRight>
 				</Row>
 

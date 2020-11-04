@@ -1,18 +1,16 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 
-// import Login from '~/screens/Login';
-// import Home from '~/screens/Home';
-import Graphs from '~/screens/Graphs';
+import Routes from '~/routes';
 
 import light from '~/styles/themes/light';
 
 const AgroMeasureApp: React.FC = () => {
 	return (
 		<ThemeProvider theme={light}>
-			{/* <Login /> */}
-			{/* <Home /> */}
-			<Graphs />
+			<Routes />
+			<StatusBar translucent={true} backgroundColor="transparent" />
 		</ThemeProvider>
 	);
 };
